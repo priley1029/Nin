@@ -1,7 +1,9 @@
 /*
- * Activity 2.5.2
+ * Activity 2.5.11
  *
- *  The PhraseSolver class the PhraseSolverGame
+ * by Patrick Riley
+ * 
+ *  The game of nim
  */
 
 import java.util.Scanner;
