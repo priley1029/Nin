@@ -1,5 +1,10 @@
+/*
+ * Activity 2.5.2
+ *
+ *  The PhraseSolver class the PhraseSolverGame
+ */
+
 import java.util.Scanner;
-import java.util.random;
 
 public class gameOfNin
 {
@@ -25,20 +30,25 @@ public class gameOfNin
         System.out.println("player two insert your name:");
         name = scan.nextLine();
         player2 = new Player(name);
+        double d = Math.random();
+
         while(board.getNumPieces() >= 1)
         {
-            if (player1.takeTurn())
+            if (d == 0.0)
             {
-                break;
+                if (player1.takeTurn())
+                {
+                    break;
+                }
             }
-
-            if (player2.takeTurn())
+            if (d == 1.0)
             {
-                break;
+                if (player2.takeTurn())
+                {
+                    break;
+                }
             }
         }
-        
-
     }
 
     public class Board
@@ -81,6 +91,13 @@ public class gameOfNin
             {
                 System.out.println(this.name + " loses!");
                 return true;
+
+                System.out.println("Do you want to play again?");
+                String yn = scan.nextLine();
+                if(yn == "yes")
+                {
+                    gon.Play();
+                }
             }
 //this is where the player can pick how many elements they want to get rid of, since it can only be between half of the total and 1 it has the current ammount divided by 2
             System.out.println(this.name + ", pick a number between 1 and " + board.getNumPieces()/2);
